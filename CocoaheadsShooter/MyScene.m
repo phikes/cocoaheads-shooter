@@ -8,6 +8,8 @@
 
 #import "MyScene.h"
 
+#define ENEMY_HIT_CATEGORY 0x1 << 1
+
 @interface MyScene()
 @property SKSpriteNode* playerNode;
 @end
@@ -32,10 +34,22 @@
         enemyNode.size = ENEMY_SIZE;
         enemyNode.zRotation = M_PI;
         
+        enemyNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemyNode.frame.size];
+        enemyNode.physicsBody.affectedByGravity = NO;
+        enemyNode.physicsBody.contactTestBitMask = ENEMY_HIT_CATEGORY;
+        
+        self.physicsWorld.contactDelegate = self;
+        
         [self addChild:_playerNode];
         [self addChild:enemyNode];
     }
     return self;
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    [contact.bodyA.node removeFromParent];
+    [contact.bodyB.node removeFromParent];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
@@ -45,7 +59,11 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     SKSpriteNode* shot = [SKSpriteNode spriteNodeWithImageNamed:SHOT_IMAGE];
+    
     shot.size = SHOT_SIZE;
+    shot.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:shot.frame.size];
+    shot.physicsBody.affectedByGravity = NO;
+    shot.physicsBody.contactTestBitMask = ENEMY_HIT_CATEGORY;
     
     shot.position = self.playerNode.position;
     [shot runAction:
