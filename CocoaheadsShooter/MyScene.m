@@ -22,7 +22,14 @@
                                           CGRectGetMidY(self.frame)
                                           );
         playerNode.size = PLAYER_SIZE;
+        
+        SKSpriteNode* enemyNode = [SKSpriteNode spriteNodeWithImageNamed:ENEMY_IMAGE];
+        enemyNode.position = CGPointMake(playerNode.position.x, playerNode.position.y+200.);
+        enemyNode.size = ENEMY_SIZE;
+        enemyNode.zRotation = M_PI;
+        
         [self addChild:playerNode];
+        [self addChild:enemyNode];
     }
     return self;
 }

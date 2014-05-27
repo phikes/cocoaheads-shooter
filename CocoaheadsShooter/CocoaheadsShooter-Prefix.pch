@@ -16,4 +16,6 @@
 #endif
 
 #define PLAYER_IMAGE @"Spaceship.png"
+#define ENEMY_IMAGE @"Spaceship.png"
+#define ENEMY_SIZE CGSizeMake(50.,50.)
 #define PLAYER_SIZE CGSizeMake(100.,100.)
