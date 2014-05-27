@@ -8,6 +8,10 @@
 
 #import "MyScene.h"
 
+@interface MyScene()
+@property SKSpriteNode* playerNode;
+@end
+
 @implementation MyScene
 
 -(id)initWithSize:(CGSize)size {    
@@ -16,19 +20,19 @@
         
         self.backgroundColor = [SKColor blackColor];
         
-        SKSpriteNode* playerNode = [SKSpriteNode spriteNodeWithImageNamed:PLAYER_IMAGE];
-        playerNode.position = CGPointMake(
+        _playerNode = [SKSpriteNode spriteNodeWithImageNamed:PLAYER_IMAGE];
+        _playerNode.position = CGPointMake(
                                           CGRectGetMidX(self.frame),
                                           CGRectGetMidY(self.frame)
                                           );
-        playerNode.size = PLAYER_SIZE;
+        _playerNode.size = PLAYER_SIZE;
         
         SKSpriteNode* enemyNode = [SKSpriteNode spriteNodeWithImageNamed:ENEMY_IMAGE];
-        enemyNode.position = CGPointMake(playerNode.position.x, playerNode.position.y+200.);
+        enemyNode.position = CGPointMake(_playerNode.position.x, _playerNode.position.y+200.);
         enemyNode.size = ENEMY_SIZE;
         enemyNode.zRotation = M_PI;
         
-        [self addChild:playerNode];
+        [self addChild:_playerNode];
         [self addChild:enemyNode];
     }
     return self;
@@ -36,6 +40,18 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    SKSpriteNode* shot = [SKSpriteNode spriteNodeWithImageNamed:SHOT_IMAGE];
+    shot.size = SHOT_SIZE;
+    
+    shot.position = self.playerNode.position;
+    [shot runAction:
+                    [SKAction repeatActionForever:
+                                                    [SKAction moveBy:CGVectorMake(0., 1.) duration:.01]]];
+    [self addChild:shot];
 }
 
 @end

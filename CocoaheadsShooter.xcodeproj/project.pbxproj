@@ -24,6 +24,7 @@
 		AEB07A291934F58B00E13CF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB07A041934F58B00E13CF8 /* UIKit.framework */; };
 		AEB07A311934F58B00E13CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEB07A2F1934F58B00E13CF8 /* InfoPlist.strings */; };
 		AEB07A331934F58B00E13CF8 /* CocoaheadsShooterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB07A321934F58B00E13CF8 /* CocoaheadsShooterTests.m */; };
+		AEB07A521935137800E13CF8 /* Explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = AEB07A511935137800E13CF8 /* Explosion.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AEB07A2E1934F58B00E13CF8 /* CocoaheadsShooterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaheadsShooterTests-Info.plist"; sourceTree = "<group>"; };
 		AEB07A301934F58B00E13CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AEB07A321934F58B00E13CF8 /* CocoaheadsShooterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaheadsShooterTests.m; sourceTree = "<group>"; };
+		AEB07A511935137800E13CF8 /* Explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Explosion.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				AEB07A181934F58B00E13CF8 /* ViewController.m */,
 				AEB07A1A1934F58B00E13CF8 /* MyScene.h */,
 				AEB07A1B1934F58B00E13CF8 /* MyScene.m */,
+				AEB07A511935137800E13CF8 /* Explosion.png */,
 				AEB07A1D1934F58B00E13CF8 /* Spaceship.png */,
 				AEB07A1F1934F58B00E13CF8 /* Images.xcassets */,
 				AEB07A091934F58B00E13CF8 /* Supporting Files */,
@@ -243,6 +246,7 @@
 				AEB07A0D1934F58B00E13CF8 /* InfoPlist.strings in Resources */,
 				AEB07A201934F58B00E13CF8 /* Images.xcassets in Resources */,
 				AEB07A1E1934F58B00E13CF8 /* Spaceship.png in Resources */,
+				AEB07A521935137800E13CF8 /* Explosion.png in Resources */,
 				AEB07A161934F58B00E13CF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +476,7 @@
 				AEB07A381934F58B00E13CF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEB07A391934F58B00E13CF8 /* Build configuration list for PBXNativeTarget "CocoaheadsShooterTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				AEB07A3B1934F58B00E13CF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
