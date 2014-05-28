@@ -15,9 +15,6 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define PLAYER_IMAGE @"Spaceship.png"
-#define ENEMY_IMAGE @"Spaceship.png"
-#define ENEMY_SIZE CGSizeMake(50.,50.)
-#define PLAYER_SIZE CGSizeMake(100.,100.)
 #define SHOT_IMAGE @"Explosion.png"
 #define SHOT_SIZE CGSizeMake(32., 32.)
+#define ENEMY_HIT_CATEGORY 0x1 << 1

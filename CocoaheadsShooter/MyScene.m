@@ -8,11 +8,8 @@
 
 #import "MyScene.h"
 
-#define ENEMY_HIT_CATEGORY 0x1 << 1
-
-@interface MyScene()
-@property SKSpriteNode* playerNode;
-@end
+#import "EnemyNode.h"
+#import "PlayerNode.h"
 
 @implementation MyScene
 
@@ -22,26 +19,11 @@
         
         self.backgroundColor = [SKColor blackColor];
         
-        _playerNode = [SKSpriteNode spriteNodeWithImageNamed:PLAYER_IMAGE];
-        _playerNode.position = CGPointMake(
-                                          CGRectGetMidX(self.frame),
-                                          CGRectGetMidY(self.frame)
-                                          );
-        _playerNode.size = PLAYER_SIZE;
-        
-        SKSpriteNode* enemyNode = [SKSpriteNode spriteNodeWithImageNamed:ENEMY_IMAGE];
-        enemyNode.position = CGPointMake(_playerNode.position.x, _playerNode.position.y+200.);
-        enemyNode.size = ENEMY_SIZE;
-        enemyNode.zRotation = M_PI;
-        
-        enemyNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemyNode.frame.size];
-        enemyNode.physicsBody.affectedByGravity = NO;
-        enemyNode.physicsBody.contactTestBitMask = ENEMY_HIT_CATEGORY;
-        
         self.physicsWorld.contactDelegate = self;
         
-        [self addChild:_playerNode];
-        [self addChild:enemyNode];
+        PlayerNode* playerNode = [[PlayerNode alloc] initWithFrame:self.frame];
+        [self addChild:[[EnemyNode alloc] initWithFrame:self.frame andPlayerNode:playerNode]];
+        [self addChild:playerNode];
     }
     return self;
 }
@@ -58,7 +40,7 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    SKSpriteNode* shot = [SKSpriteNode spriteNodeWithImageNamed:SHOT_IMAGE];
+    /*SKSpriteNode* shot = [SKSpriteNode spriteNodeWithImageNamed:SHOT_IMAGE];
     
     shot.size = SHOT_SIZE;
     shot.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:shot.frame.size];
@@ -69,7 +51,7 @@
     [shot runAction:
                     [SKAction repeatActionForever:
                                                     [SKAction moveBy:CGVectorMake(0., 1.) duration:.01]]];
-    [self addChild:shot];
+    [self addChild:shot];*/
 }
 
 @end

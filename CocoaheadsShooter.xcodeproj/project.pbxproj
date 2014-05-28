@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEA251E11935DFCF00DC8FE9 /* PlayerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA251E01935DFCF00DC8FE9 /* PlayerNode.m */; };
+		AEA251E41935E02D00DC8FE9 /* EnemyNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA251E31935E02D00DC8FE9 /* EnemyNode.m */; };
+		AEA251E71935E07600DC8FE9 /* GameNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA251E61935E07600DC8FE9 /* GameNode.m */; };
 		AEB07A011934F58B00E13CF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB07A001934F58B00E13CF8 /* Foundation.framework */; };
 		AEB07A031934F58B00E13CF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB07A021934F58B00E13CF8 /* CoreGraphics.framework */; };
 		AEB07A051934F58B00E13CF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEB07A041934F58B00E13CF8 /* UIKit.framework */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEA251DF1935DFCF00DC8FE9 /* PlayerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerNode.h; sourceTree = "<group>"; };
+		AEA251E01935DFCF00DC8FE9 /* PlayerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerNode.m; sourceTree = "<group>"; };
+		AEA251E21935E02D00DC8FE9 /* EnemyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyNode.h; sourceTree = "<group>"; };
+		AEA251E31935E02D00DC8FE9 /* EnemyNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyNode.m; sourceTree = "<group>"; };
+		AEA251E51935E07600DC8FE9 /* GameNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNode.h; sourceTree = "<group>"; };
+		AEA251E61935E07600DC8FE9 /* GameNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameNode.m; sourceTree = "<group>"; };
 		AEB079FD1934F58B00E13CF8 /* CocoaheadsShooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaheadsShooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB07A001934F58B00E13CF8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AEB07A021934F58B00E13CF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,6 +98,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AEA251DC1935DF9A00DC8FE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AEA251DD1935DF9F00DC8FE9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AEA251DF1935DFCF00DC8FE9 /* PlayerNode.h */,
+				AEA251E01935DFCF00DC8FE9 /* PlayerNode.m */,
+				AEA251E21935E02D00DC8FE9 /* EnemyNode.h */,
+				AEA251E31935E02D00DC8FE9 /* EnemyNode.m */,
+				AEA251E51935E07600DC8FE9 /* GameNode.h */,
+				AEA251E61935E07600DC8FE9 /* GameNode.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AEA251DE1935DFA300DC8FE9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEB07A171934F58B00E13CF8 /* ViewController.h */,
+				AEB07A181934F58B00E13CF8 /* ViewController.m */,
+				AEB07A1A1934F58B00E13CF8 /* MyScene.h */,
+				AEB07A1B1934F58B00E13CF8 /* MyScene.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		AEB079F41934F58B00E13CF8 = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +163,12 @@
 		AEB07A081934F58B00E13CF8 /* CocoaheadsShooter */ = {
 			isa = PBXGroup;
 			children = (
+				AEA251DE1935DFA300DC8FE9 /* Controller */,
+				AEA251DD1935DF9F00DC8FE9 /* View */,
+				AEA251DC1935DF9A00DC8FE9 /* Model */,
 				AEB07A111934F58B00E13CF8 /* AppDelegate.h */,
 				AEB07A121934F58B00E13CF8 /* AppDelegate.m */,
 				AEB07A141934F58B00E13CF8 /* Main.storyboard */,
-				AEB07A171934F58B00E13CF8 /* ViewController.h */,
-				AEB07A181934F58B00E13CF8 /* ViewController.m */,
-				AEB07A1A1934F58B00E13CF8 /* MyScene.h */,
-				AEB07A1B1934F58B00E13CF8 /* MyScene.m */,
 				AEB07A511935137800E13CF8 /* Explosion.png */,
 				AEB07A1D1934F58B00E13CF8 /* Spaceship.png */,
 				AEB07A1F1934F58B00E13CF8 /* Images.xcassets */,
@@ -268,8 +307,11 @@
 			files = (
 				AEB07A1C1934F58B00E13CF8 /* MyScene.m in Sources */,
 				AEB07A191934F58B00E13CF8 /* ViewController.m in Sources */,
+				AEA251E71935E07600DC8FE9 /* GameNode.m in Sources */,
+				AEA251E41935E02D00DC8FE9 /* EnemyNode.m in Sources */,
 				AEB07A131934F58B00E13CF8 /* AppDelegate.m in Sources */,
 				AEB07A0F1934F58B00E13CF8 /* main.m in Sources */,
+				AEA251E11935DFCF00DC8FE9 /* PlayerNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
